@@ -16,8 +16,26 @@
 
 
 
+################################################################################
+###	Load the Test data set and organize it
+
+###	Read in the Subject data
+testSubj <- read.csv( "./data/test/subject_test.txt", col.names = c("SubjectID") )
+
+###	Read in the Feature data
+testFeatures <- read.table( "./data/test/X_test.txt")
+
+###	Read in the Activity labels
+testActivities <- read.table( "./data/test/y_test.txt", col.names = c("ActivityTypeID"))
+
+###	Read in the Feature labels
+testFeatureLbls <- read.table( "./data/features.txt", col.names = c("FeatureColumn", "FeatureName") )
 
 
+
+
+################################################################################
+###	Load the Train data set and organize it
 
 
 
