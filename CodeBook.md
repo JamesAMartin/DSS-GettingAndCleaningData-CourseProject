@@ -39,7 +39,11 @@ with the following levels:
 ##Average Value Fields
 All of the remaining variables in the dataset provide the average calculated for
 all observations of mean and standard deviation in the original dataset, grouped
-by the Subject and ActivityType.  Remaining variables are:
+by the Subject and ActivityType.  
+
+Values for all average variables are normalized and bounded within [-1,1].
+
+Remaining variables are:
 
 - AvgOf.tBodyAcc.mean.X
 - AvgOf.tBodyAcc.mean.Y
