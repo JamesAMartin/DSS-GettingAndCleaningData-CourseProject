@@ -86,7 +86,7 @@ img {
 
 <div id="overview" class="section level1">
 <h1>Overview</h1>
-<p>This README.md file summarizes the process taken to re-organize the <strong>Human Activity Recognition Using Smartphones Dataset</strong> (<strong>HARUSD</strong> dataset, Version 1.0). The new organization provides averages for the originally provided mean and standard deviation values gropued by the subject and activity.</p>
+<p>This README.md file summarizes the process taken to re-organize the <strong>Human Activity Recognition Using Smartphones Dataset</strong> (<strong>HARUSD</strong> dataset, Version 1.0). The new organization provides averages for the originally provided mean and standard deviation values grouped by the subject and activity.</p>
 <p>The CodeBook.md document provides details on the new dataset, as well as summarizing details about the original data.</p>
 <p>The output for this analysis (SubjectActivityAverages.txt) uses a wide format for the data, yielding 180 observations and 66 variables.</p>
 </div>
@@ -95,37 +95,41 @@ img {
 <div id="source-data" class="section level2">
 <h2>Source Data</h2>
 <p>Source data for creating the <strong>Average Values for HARUSD</strong> dataset were downloaded from <a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a> and additional information can be found at <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones" class="uri">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a>.</p>
-<p>The contents downloaded Zip file were extracted into the <strong>data</strong> subdirectory of the R project working directory. All processing uses the working directory as the initial location, and looks to the <strong>./data</strong> directory for the source files.</p>
+<p>The contents of the downloaded Zip file were extracted into the <strong>data</strong> subdirectory of the R project working directory. All processing uses the working directory as the initial location, and looks to the <strong>./data</strong> directory for the source files.</p>
 <p>Key information used in creating the <strong>Average Values for HARUSD</strong> dataset come from the following excerpt from the HARUSD ReadMe.txt file.</p>
-<blockquote>
-<p>The dataset includes the following files:</p>
-<ul>
-<li><p>‘README.txt’</p></li>
-<li><p>‘features_info.txt’: Shows information about the variables used on the feature vector.</p></li>
-<li><p>‘features.txt’: List of all features.</p></li>
-<li><p>‘activity_labels.txt’: Links the class labels with their activity name.</p></li>
-<li><p>‘train/X_train.txt’: Training set.</p></li>
-<li><p>‘train/y_train.txt’: Training labels.</p></li>
-<li><p>‘test/X_test.txt’: Test set.</p></li>
-<li><p>‘test/y_test.txt’: Test labels.</p></li>
-</ul>
-<p>The following files are available for the train and test data. Their descriptions are equivalent.</p>
-<ul>
-<li>‘train/subject_train.txt’: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.</li>
-</ul>
-</blockquote>
+<pre><code> The dataset includes the following files:
+
+- 'README.txt'
+
+- 'features_info.txt': Shows information about the variables used on the feature vector.
+
+- 'features.txt': List of all features.
+
+- 'activity_labels.txt': Links the class labels with their activity name.
+
+- 'train/X_train.txt': Training set.
+
+- 'train/y_train.txt': Training labels.
+
+- 'test/X_test.txt': Test set.
+
+- 'test/y_test.txt': Test labels.
+
+The following files are available for the train and test data. Their descriptions are equivalent. 
+
+- 'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.</code></pre>
 </div>
 <div id="processing" class="section level2">
 <h2>Processing</h2>
-<p>All processing to generate the <strong>Average Values for HARUSD</strong>* dataset is contained in the <strong>run_analysis.R</strong> file. It is assumed that the HARUSD source data has already been downloaded from the link listed above, and placed in the <strong>data</strong> sub-folder of the working directory. Once this is complete, simply source the run_analysis.R file within R, and it will generate the <strong>SubjectActivityAverages.txt</strong> file containing the new <strong>Average Values for HARUSD</strong> dataset, and place it in the working directory.</p>
+<p>All processing to generate the <strong>Average Values for HARUSD</strong> dataset is contained in the <strong>run_analysis.R</strong> file. It is assumed that the HARUSD source data has already been downloaded from the link listed above, and placed in the <strong>data</strong> sub-folder of the working directory. Once this is complete, simply source the run_analysis.R file within R, and it will generate the <strong>SubjectActivityAverages.txt</strong> file containing the new <strong>Average Values for HARUSD</strong> dataset, and place it in the working directory.</p>
 <div id="load-feature-labels-and-activity-type-descriptions" class="section level3">
 <h3>Load Feature labels and Activity Type Descriptions</h3>
 <p>This portion of the run_analysis.R script loads the Feature Labels and Activity Description data that is related to both the testing and training datasets. Some data cleanup is performed on the Feature Labels to make them compatible with the R environment.</p>
 <p>Modifications include:</p>
 <ul>
 <li>Replace all parenthesis ( “(” or “)” ) characters with a hyphen (“-”).</li>
-<li>Replace all commas (“,”) with a period (“.”)</li>
-<li>Replace all multiple periods (“..”, “…”, etc.) with a single period (“.”).</li>
+<li>Replace all commas (“,”) with a hyphen (“-”)</li>
+<li>Replace all multiple hyphens (“–”, “—”, etc.) with a single period (“.”).</li>
 </ul>
 <p>After the cleanup, the labels are R compatible, yet still maintain the basic original format and meaning.</p>
 </div>
@@ -153,7 +157,7 @@ img {
 <div id="generate-new-dataset-averaging-values-by-subject-and-activity" class="section level3">
 <h3>Generate New Dataset Averaging Values by Subject and Activity</h3>
 <p>Our final, desired dataset, is generated by calculating averages on the mean and standard deviation columns from our source data, grouped by the Subject and Activity.</p>
-<p>Once the averaged data is organized, it is writen to the working directory in the <strong>SubjectActivityAverages.txt</strong> file.</p>
+<p>Once the averaged data is organized, it is written to the working directory in the <strong>SubjectActivityAverages.txt</strong> file.</p>
 </div>
 </div>
 </div>
