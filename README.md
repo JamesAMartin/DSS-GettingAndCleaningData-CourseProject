@@ -1,22 +1,46 @@
 ---
-title: "README"
+title: "README - Average Values for HARUSD"
 author: "James A Martin"
 date: "December 23, 2015"
-output: html_document
+output: 
+  html_document:
+    toc: true
+    theme: cerulean
 ---
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+#Overview
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+This README.md file summarizes the process taken to re-organize the **Human
+Activity Recognition Using Smartphones Dataset** (**HARUSD** dataset, Version 1.0).
+The new organization provides averages for the originally provided mean and
+standard deviation values gropued by the subject and activity.
 
-```{r}
-summary(cars)
+The CodeBook.md document provides details on the new dataset, as well as
+summarizing details about the original.
+
+
+#Creating the **Average Values for HARUSD** Dataset
+
+
+##Source Data
+
+
+##Processing
+
+
+##Loading From File
+
+In order to load the dataset created by the above processing, use the following
+code within R.  It is assumed that the file is located in your working directory.
+```
+data <- read.table( "./SubjectActivityAverages.txt", header = TRUE)
+View(data)
+```
+To load the data directly from GitHub, use the following code within R.
 ```
 
-You can also embed plots, for example:
-
-```{r, echo=FALSE}
-plot(cars)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+

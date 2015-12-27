@@ -115,7 +115,7 @@ subjActMeans <- ddply( expData, c("SubjectID", "ActivityType"), function(x) colS
 names(subjActMeans) <- c( "SubjectID", "ActivityType", paste( "AvgOf.", names(subjActMeans[3:66]), sep = "" ) )
 
 ###	Save data to file
-write.table( subjActMeans, file = "./SubjectActivityAverages.txt" )
+write.table( subjActMeans, file = "./SubjectActivityAverages.txt", row.names = FALSE )
 
 
 
